@@ -1,13 +1,13 @@
 export default function Categories() {
   const cakeCategories = [
     { title: 'Birthday Cakes',  image: '/white.png' },
-    { title: 'mangoo cake',     image: '/mango.png' },
-    { title: 'choco cake',      image: '/cakechoco.png' },
+    { title: 'Mangoo cake',     image: '/mango.png' },
+    { title: 'Choco cake',      image: '/cakechoco.png' },
     { title: 'Brownie cake',    image: '/brownie.png' },
-    { title: 'dry nut cake',    image: '/birthdaycake.png' },
-    { title: 'cupcakes',        image: '/softybrown.png' },
-    { title: 'dry bread',       image: '/bread.png' },
-    { title: 'bun',             image: '/bun.png' },
+    { title: 'Dry nut cake',    image: '/birthdaycake.png' },
+    { title: 'Cupcakes',        image: '/softybrown.png' },
+    { title: 'Dry bread',       image: '/bread.png' },
+    { title: 'Bun',             image: '/bun.png' },
   ];
 
   return (

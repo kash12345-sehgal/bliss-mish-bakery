@@ -32,7 +32,7 @@ export default function OrderForm() {
       '',
       `*Name:* ${formData.custName.trim()}`,
       `*Phone:* ${formData.custPhone.trim()}`,
-      `*Cake Category:* ${formData.cakeCategory}`,
+      `*Product Category:* ${formData.cakeCategory}`,
       `*Flavour:* ${formData.flavour.trim()}`,
       `*Weight:* ${formData.weight}`,
       `*Delivery Date:* ${formData.deliveryDate}`,
@@ -58,18 +58,20 @@ export default function OrderForm() {
   };
 
   const categories = [
-    'Birthday Cake',
-    'Anniversary Cake',
-    'Wedding Cake',
-    'Photo Cake',
-    'Chocolate Cake',
-    'Fruit Cake',
-    'Designer Cake',
-    'Cupcakes',
+    'Birthday Cakes',
+    'Mangoo cake',
+    'Choco cake',
+    'Brownie cake',
+    'Dry nut cake',
+    'Cupcakes',  
+    'White bread',
+    'Buns',  
+    'Donuts',
+    'Cookies',
+    'Orchard Parfait'
   ];
 
   const weights = [
-    '0.5 Kg',
     '1 Kg',
     '1.5 Kg',
     '2 Kg',

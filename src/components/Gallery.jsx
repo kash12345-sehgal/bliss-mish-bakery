@@ -6,6 +6,8 @@ export default function Gallery() {
     { src: '/softyblack.png', alt: 'Mini Chocolate Cupcakes', isTall: false, delay: '3', fallbackText: 'cake4.jpg' },
     { src: '/red.png',        alt: 'Red Velvet Cupcake', isTall: true, delay: '0', fallbackText: 'hero-cake.png' },
     { src: '/softybrown.png', alt: 'Pecan Muffin', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
+    { src: '/WhiteBread.png', alt: 'White Bread', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
+
   ];
 
   const handleImageError = (e) => {
