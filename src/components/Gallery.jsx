@@ -1,0 +1,50 @@
+export default function Gallery() {
+  const galleryItems = [
+    { src: '/circle.png', alt: 'Rosette Birthday Cake', isTall: false, delay: '0', fallbackText: 'cake1.jpg' },
+    { src: '/banana.png', alt: 'Three-Tier Wedding Cake', isTall: true, delay: '1', fallbackText: 'cake2.jpg' },
+    { src: '/cookies.png', alt: 'Drip Chocolate Cake', isTall: false, delay: '2', fallbackText: 'cake3.jpg' },
+    { src: '/softyblack.png', alt: 'Pastel Cupcake Box', isTall: false, delay: '3', fallbackText: 'cake4.jpg' },
+    { src: '/red.png', alt: 'Gold Leaf Designer Cake', isTall: true, delay: '0', fallbackText: 'hero-cake.png' },
+    { src: '/softybrown.png', alt: 'Photo Print Cake', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
+  ];
+
+  const handleImageError = (e) => {
+    e.currentTarget.style.display = 'none';
+    const fallback = e.currentTarget.nextElementSibling;
+    if (fallback) {
+      fallback.style.display = 'flex';
+    }
+  };
+
+  return (
+    <section className="gallery" id="gallery">
+      <div className="section-head reveal" data-reveal="up">
+        <p className="section-eyebrow">Fresh From The Kitchen</p>
+        <h2 className="section-title">Featured Creations</h2>
+      </div>
+
+      <div className="gallery__grid">
+        {galleryItems.map((item, index) => (
+          <div
+            key={index}
+            className={`gallery__item ${item.isTall ? 'gallery__item--tall' : ''} reveal`}
+            data-reveal="zoom"
+            data-delay={item.delay}
+          >
+            <img
+              src={item.src}
+              alt={item.alt}
+              onError={handleImageError}
+            />
+            <div className="gallery__fallback">
+              <span className="img-placeholder">{item.fallbackText}</span>
+            </div>
+            <div className="gallery__overlay">
+              <span>{item.alt}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
