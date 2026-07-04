@@ -10,6 +10,7 @@ export default function OrderForm() {
     flavour: '',
     weight: '',
     deliveryDate: '',
+    deliveryTime: '',
     address: '',
     customMessage: '',
     instructions: '',
@@ -35,6 +36,7 @@ export default function OrderForm() {
       `*Flavour:* ${formData.flavour.trim()}`,
       `*Weight:* ${formData.weight}`,
       `*Delivery Date:* ${formData.deliveryDate}`,
+      `*Delivery Time:* ${formData.deliveryTime}`,
       `*Delivery Address:* ${formData.address.trim()}`,
     ];
 
@@ -47,7 +49,7 @@ export default function OrderForm() {
 
     lines.push(
       '',
-      '📌 *Note:* Agar aapke paas koi reference design ya photo hai, toh please is message ko send karne ke baad niche 📎 attachment icon par click karke apni gallery se photo bhej dein.'
+      '📌 *Note:* Please share reference photos (if any) and do send your review once you receive the cake! 🍰'
     );
 
     const text = encodeURIComponent(lines.join('\n'));
@@ -148,7 +150,7 @@ export default function OrderForm() {
             </div>
           </div>
 
-          <div className="form-row">
+          <div className="form-row--three">
             <div className="form-field">
               <select
                 id="weight"
@@ -175,6 +177,18 @@ export default function OrderForm() {
                 onChange={handleChange}
               />
               <label htmlFor="deliveryDate">Delivery Date</label>
+            </div>
+            <div className="form-field">
+              <input
+                type="time"
+                id="deliveryTime"
+                name="deliveryTime"
+                placeholder=" "
+                required
+                value={formData.deliveryTime}
+                onChange={handleChange}
+              />
+              <label htmlFor="deliveryTime">Delivery Time</label>
             </div>
           </div>
 

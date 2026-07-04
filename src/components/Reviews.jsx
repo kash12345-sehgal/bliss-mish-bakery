@@ -64,7 +64,8 @@ export default function Reviews() {
     <section className="reviews" id="reviews">
       <div className="section-head reveal" data-reveal="up">
         <p className="section-eyebrow">Sweet Words</p>
-        <h2 className="section-title">What Our Customers Say</h2>
+        <h2 className="section-title">Reviews From Our Happy Customers</h2>
+        <p className="section-desc">Your feedback and reviews mean the world to us. Please share your experience, as it helps us bake even better memories for you!</p>
       </div>
 
       <div className="reviews__slider">

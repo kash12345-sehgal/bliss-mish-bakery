@@ -1,11 +1,11 @@
 export default function Gallery() {
   const galleryItems = [
-    { src: '/circle.png', alt: 'Rosette Birthday Cake', isTall: false, delay: '0', fallbackText: 'cake1.jpg' },
-    { src: '/banana.png', alt: 'Three-Tier Wedding Cake', isTall: true, delay: '1', fallbackText: 'cake2.jpg' },
-    { src: '/cookies.png', alt: 'Drip Chocolate Cake', isTall: false, delay: '2', fallbackText: 'cake3.jpg' },
-    { src: '/softyblack.png', alt: 'Pastel Cupcake Box', isTall: false, delay: '3', fallbackText: 'cake4.jpg' },
-    { src: '/red.png', alt: 'Gold Leaf Designer Cake', isTall: true, delay: '0', fallbackText: 'hero-cake.png' },
-    { src: '/softybrown.png', alt: 'Photo Print Cake', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
+    { src: '/circle.png',     alt: 'Donuts', isTall: false, delay: '0', fallbackText: 'cake1.jpg' },
+    { src: '/banana.png',     alt: 'Orchard Parfait', isTall: true, delay: '1', fallbackText: 'cake2.jpg' },
+    { src: '/cookies.png',    alt: 'Cookies', isTall: false, delay: '2', fallbackText: 'cake3.jpg' },
+    { src: '/softyblack.png', alt: 'Mini Chocolate Cupcakes', isTall: false, delay: '3', fallbackText: 'cake4.jpg' },
+    { src: '/red.png',        alt: 'Red Velvet Cupcake', isTall: true, delay: '0', fallbackText: 'hero-cake.png' },
+    { src: '/softybrown.png', alt: 'Pecan Muffin', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
   ];
 
   const handleImageError = (e) => {

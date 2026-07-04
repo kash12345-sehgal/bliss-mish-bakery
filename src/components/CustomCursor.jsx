@@ -3,10 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 export default function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
-  
+
   const dotRef = useRef(null);
   const ringRef = useRef(null);
-  
+
   const mousePos = useRef({ x: 0, y: 0 });
   const ringPos = useRef({ x: 0, y: 0 });
   const requestRef = useRef(null);
@@ -20,7 +20,7 @@ export default function CustomCursor() {
     const onMouseMove = (e) => {
       mousePos.current.x = e.clientX;
       mousePos.current.y = e.clientY;
-      
+
       // Place the small central dot instantly
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
@@ -42,16 +42,16 @@ export default function CustomCursor() {
 
     const onMouseOver = (e) => {
       const target = e.target;
-      const isClickable = 
-        target.tagName === 'A' || 
-        target.tagName === 'BUTTON' || 
-        target.closest('a') || 
+      const isClickable =
+        target.tagName === 'A' ||
+        target.tagName === 'BUTTON' ||
+        target.closest('a') ||
         target.closest('button') ||
         target.closest('.cake-card') ||
         target.closest('.gallery__item') ||
         target.closest('.contact-card') ||
         target.closest('.about__cert-img');
-        
+
       setIsHovered(!!isClickable);
     };
 
@@ -62,7 +62,7 @@ export default function CustomCursor() {
     window.addEventListener('mouseover', onMouseOver);
     document.addEventListener('mouseleave', onMouseLeaveWindow);
     document.addEventListener('mouseenter', onMouseEnterWindow);
-    
+
     requestRef.current = requestAnimationFrame(render);
 
     return () => {

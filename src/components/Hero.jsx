@@ -12,15 +12,34 @@ export default function Hero({ animateTitle }) {
           <p className="hero__eyebrow fade-in-up" data-delay="0">Home‑Baked &middot; Handcrafted &middot; With Love</p>
 
           <h1 className="hero__title" id="heroTitle" aria-label={titleText}>
-            {animateTitle && titleText.split('').map((char, i) => (
-              <span
-                key={i}
-                className="letter"
-                style={{ animationDelay: `${0.25 + i * 0.045}s` }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            ))}
+            {animateTitle && titleText.split(' ').map((word, wordIdx, wordsArr) => {
+              const prevCharsCount = wordsArr.slice(0, wordIdx).join(' ').length + (wordIdx > 0 ? 1 : 0);
+              return (
+                <span key={wordIdx} className="word">
+                  {word.split('').map((char, charIdx) => {
+                    const globalIdx = prevCharsCount + charIdx;
+                    return (
+                      <span
+                        key={globalIdx}
+                        className="letter"
+                        style={{ animationDelay: `${0.25 + globalIdx * 0.045}s` }}
+                      >
+                        {char}
+                      </span>
+                    );
+                  })}
+                  {wordIdx < wordsArr.length - 1 && (
+                    <span
+                      key={prevCharsCount + word.length}
+                      className="letter"
+                      style={{ animationDelay: `${0.25 + (prevCharsCount + word.length) * 0.045}s` }}
+                    >
+                      {'\u00A0'}
+                    </span>
+                  )}
+                </span>
+              );
+            })}
           </h1>
 
           <p className="hero__subtitle fade-in-up" data-delay="1">
@@ -59,7 +78,7 @@ export default function Hero({ animateTitle }) {
               <span className="hero__image-badge-icon"></span>
               <div className="hero__image-badge-text">
                 <span className="hero__image-badge-title">Nancy Sehgal</span>
-                <span className="hero__image-badge-sub">Certified Pastry Artist</span>
+                <span className="hero__image-badge-sub">Certified Baker</span>
               </div>
             </div>
           </div>

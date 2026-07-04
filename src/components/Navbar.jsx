@@ -79,8 +79,11 @@ export default function Navbar() {
       >
         <div className="navbar__inner">
           <a href="#home" className="navbar__logo" onClick={(e) => handleLinkClick(e, '#home')}>
-            <span className="navbar__logo-main">Bliss <span className="script">Mish</span></span>
-            <span className="navbar__logo-sub">Bakery</span>
+            <img src="/logo.png" alt="Bliss Mish Bakery Logo" className="navbar__logo-img" />
+            <div className="navbar__logo-text">
+              <span className="navbar__logo-main">Bliss <span className="script">Mish</span></span>
+              <span className="navbar__logo-sub">Bakery</span>
+            </div>
           </a>
 
           <nav className={`navbar__menu ${isOpen ? 'is-open' : ''}`} id="navMenu">
