@@ -11,6 +11,7 @@ import OrderForm from './components/OrderForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   const [loaderFinished, setLoaderFinished] = useState(false);
@@ -40,6 +41,7 @@ export default function App() {
 
   return (
     <>
+      <CustomCursor />
       <Loader onLoaded={() => setLoaderFinished(true)} />
       <Navbar />
       <main style={{ overflowX: 'hidden' }}>

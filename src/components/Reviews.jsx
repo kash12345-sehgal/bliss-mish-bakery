@@ -74,7 +74,7 @@ export default function Reviews() {
           aria-label="Previous review"
           onClick={handlePrev}
         >
-          ‹
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
 
         <div className="reviews__track" id="reviewsTrack">
@@ -83,7 +83,13 @@ export default function Reviews() {
               key={index} 
               className={`review-card ${index === activeIndex ? 'is-active' : ''}`}
             >
-              <div className="review-card__stars" aria-hidden="true">★★★★★</div>
+              <div className="review-card__stars" aria-hidden="true" style={{ display: 'flex', gap: '4px', marginBottom: '8px' }}>
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} viewBox="0 0 24 24" style={{ width: '16px', height: '16px', fill: 'currentColor' }}>
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+              </div>
               <p className="review-card__text">{review.text}</p>
               <div className="review-card__author">
                 <span className="review-card__name">{review.name}</span>
@@ -99,7 +105,7 @@ export default function Reviews() {
           aria-label="Next review"
           onClick={handleNext}
         >
-          ›
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
         </button>
       </div>
 

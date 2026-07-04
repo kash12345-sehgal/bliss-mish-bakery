@@ -5,9 +5,12 @@ export default function WhyChooseUs() {
       desc: 'Baked fresh in a real home kitchen, never mass-produced.',
       delay: '0',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M24 6 6 18v6c0 12 8 18 18 18s18-6 18-18v-6L24 6Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M16 22h16M16 28h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 12h18" />
+          <path d="M12 3v9" />
+          <path d="m18 8-3.5 3.5" />
+          <path d="m6 8 3.5 3.5" />
+          <path d="M4 12c0 4.4 3.6 8 8 8s8-3.6 8-8" />
         </svg>
       )
     },
@@ -16,9 +19,12 @@ export default function WhyChooseUs() {
       desc: 'Sourced daily — real butter, real cream, real flavour.',
       delay: '1',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <circle cx="24" cy="24" r="17" stroke="currentColor" strokeWidth="2"/>
-          <path d="M24 14v10l7 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v20" />
+          <path d="M12 6c1.5-1 3.5-1 4.5.5s.5 3.5-1 4.5c-1.5 1-3.5 1-4.5-.5S10.5 7 12 6Z" />
+          <path d="M12 12c1.5-1 3.5-1 4.5.5s.5 3.5-1 4.5c-1.5 1-3.5 1-4.5-.5S10.5 13 12 12Z" />
+          <path d="M12 6c-1.5-1-3.5-1-4.5.5s-.5 3.5 1 4.5c1.5 1 3.5 1 4.5-.5s.5-3.5-1-4.5Z" />
+          <path d="M12 12c-1.5-1-3.5-1-4.5.5s-.5 3.5 1 4.5c1.5 1 3.5 1 4.5-.5s.5-3.5-1-4.5Z" />
         </svg>
       )
     },
@@ -27,8 +33,9 @@ export default function WhyChooseUs() {
       desc: 'Every layer finished with patience and a perfectionist\'s eye.',
       delay: '2',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M24 6l5.5 11.2L42 19l-9 8.8L35 40l-11-6-11 6 2-12.2L6 19l12.5-1.8L24 6Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="8" r="6" />
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
         </svg>
       )
     },
@@ -37,8 +44,12 @@ export default function WhyChooseUs() {
       desc: 'Tell us your vision — we sculpt, paint and pipe it to life.',
       delay: '3',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M8 38 28 18M30 8l10 10-6 6-10-10 6-6ZM6 40l6-2 2-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22h9" />
+          <path d="M3 22h9" />
+          <path d="M12 18v4" />
+          <path d="M5 18h14v-6H5v6Z" />
+          <path d="M8 12V8a4 4 0 0 1 8 0v4" />
         </svg>
       )
     },
@@ -47,9 +58,10 @@ export default function WhyChooseUs() {
       desc: 'Luxury taste, honest pricing — no hidden costs.',
       delay: '4',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M9 18h30l-3 20H12L9 18Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M16 18a8 8 0 0 1 16 0" stroke="currentColor" strokeWidth="2"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2v8" />
+          <path d="m4.93 10.93 4.24-4.24a2 2 0 0 1 2.83 0l7.07 7.07a2 2 0 0 1 0 2.83l-4.24 4.24a2 2 0 0 1-2.83 0L4.93 13.76a2 2 0 0 1 0-2.83Z" />
+          <circle cx="10" cy="10" r="0.8" fill="currentColor" />
         </svg>
       )
     },
@@ -58,11 +70,9 @@ export default function WhyChooseUs() {
       desc: 'Packed with care and delivered exactly when promised.',
       delay: '5',
       icon: (
-        <svg viewBox="0 0 48 48" fill="none">
-          <rect x="6" y="14" width="26" height="20" rx="2" stroke="currentColor" strokeWidth="2"/>
-          <path d="M32 20h6l4 5v9h-10V20Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <circle cx="14" cy="36" r="3" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="34" cy="36" r="3" stroke="currentColor" strokeWidth="2"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 15 14" />
         </svg>
       )
     }
