@@ -121,6 +121,7 @@
 
 <!-- ===================== ABOUT ===================== -->
 <section class="about" id="about">
+  
   <div class="about__inner">
     <div class="about__image reveal" data-reveal="left">
       <div class="about__image-frame">
@@ -136,16 +137,20 @@
 
     <div class="about__text reveal" data-reveal="right">
       <p class="section-eyebrow">The Hands Behind The Batter</p>
-      <h2 class="section-title">Meet Nancy Sehgal</h2>
+      <h2 class="section-title">Meet: Nancy Verma Sehgal</h2>
       <p class="about__quote">
         "Hi, I'm Nancy. Every cake is handcrafted with love, creativity, and premium
         ingredients. Every celebration deserves a beautiful cake."
       </p>
-      <div class="about__signature">— Nancy Sehgal</div>
-
       <div class="about__highlights" style="display: flex; gap: 30px; margin-top: 35px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 140px;">
-              <h4 style="font-family: inherit; color: #b38b5d; font-size: 1.2rem; margin-bottom: 5px; font-weight: 600;">100% Eggless</h4>
+              <!-- <h4 style="font-family: inherit; color: #b0885a; font-size: 1.2rem; margin-bottom: 5px; font-weight: 600;">100% Eggless<img src="veg.png">
+  </h4> -->
+  <h4 style="font-family: inherit; color: #b0885a; font-size: 1.2rem; margin-bottom: 5px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+  100% Eggless
+  <img src="veg.png" alt="Veg Icon" style="width: 18px; height: 18px; object-fit: contain;">
+</h4>
+              
               <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Baked with pure hygiene & care</p>
             </div>
             <div style="flex: 1; min-width: 140px;">
@@ -157,57 +162,51 @@
               <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">Made strictly on order basis</p>
             </div>
           </div>
-          <div class="about__certificate" style="display: flex; align-items: center; gap: 25px; margin-top: 40px; padding: 20px; background: #fff; border: 1px solid rgba(179, 139, 93, 0.2); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-            
-            <div style="flex-shrink: 0;">
-              <img  src="nani2.png" alt="Certified Baker" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #b38b5d; padding: 3px; background: #fff;">
+          <div class="about__certificate">
+            <div class="about__cert-img-wrapper">
+              <img src="nani2.png" alt="Certified Baker" class="about__cert-img" onclick="openModal()">
             </div>
             
-            <div style="flex: 1;">
-              <h5 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #b38b5d; font-weight: 600; font-family: inherit; display: flex; align-items: center; gap: 8px;">
+            <div class="about__cert-text">
+              <h5 class="about__cert-title">
                 Certified Professional Baker 📜
               </h5>
-              <p style="margin: 0; font-size: 0.95rem; color: #555; line-height: 1.5; font-weight: 400;">
+              <p class="about__cert-desc">
                 Successfully completed professional baking & pastry arts certification. Combining verified technical expertise with a passion for crafting flawless celebrations.
               </p>
-              </div>
- </div>
- <!-- Full Screen View Pop-up (Your Modal with Smooth Animation script) -->
-<div id="certModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; backdrop-filter: blur(5px);" onclick="closeModal()">
-  <span style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
-  <img id="modalImg" src="nani2.png" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transform: scale(0.7); transition: transform 0.3s ease;">
-</div>
-
-<!-- Small Script to cleanly handle the smooth transition/opacity you added -->
-<script>
-function openModal() {
-  const modal = document.getElementById('certModal');
-  const img = document.getElementById('modalImg');
-  modal.style.display = 'flex';
-  setTimeout(() => {
-    modal.style.opacity = '1';
-    img.style.transform = 'scale(1)';
-  }, 10);
-}
-
-function closeModal() {
-  const modal = document.getElementById('certModal');
-  const img = document.getElementById('modalImg');
-  modal.style.opacity = '0';
-  img.style.transform = 'scale(0.7)';
-  setTimeout(() => {
-    modal.style.display = 'none';
-  }, 300);
-}
-</script>
-  
-  
-</div>
- <div id="certModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
-            <span id="closeCertModal" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s;">&times;</span>
-            <img id="modalImg" src="nani2.png" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transform: scale(0.9); transition: transform 0.3s ease;">
+            </div>
           </div>
-  </div>
+        </div> <!-- Closes about__text reveal -->
+
+        <!-- Full Screen View Pop-up Modal -->
+        <div id="certModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; backdrop-filter: blur(5px);" onclick="closeModal()">
+          <span style="position: absolute; top: 20px; right: 35px; color: #e2b8b8; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+          <img id="modalImg" src="nani2.png" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transform: scale(0.7); transition: transform 0.3s ease;">
+        </div>
+
+        <!-- Smooth transition script for the Modal -->
+        <script>
+        function openModal() {
+          const modal = document.getElementById('certModal');
+          const img = document.getElementById('modalImg');
+          modal.style.display = 'flex';
+          setTimeout(() => {
+            modal.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+          }, 10);
+        }
+
+        function closeModal() {
+          const modal = document.getElementById('certModal');
+          const img = document.getElementById('modalImg');
+          modal.style.opacity = '0';
+          img.style.transform = 'scale(0.7)';
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 300);
+        }
+        </script>
+      </div>
 </section>
 
 <!-- ===================== CAKE CATEGORIES ===================== -->
@@ -219,80 +218,107 @@ function closeModal() {
   </div>
 
   <div class="categories__grid">
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="0">
-      <div class="cake-card__image"><span class="img-placeholder">cake1.jpg</span><span class="cake-card__emoji">🎂</span></div>
-      <div class="cake-card__body">
-        <h3>Birthday Cakes</h3>
-        <p>Playful, colourful and personalised for every age.</p>
-        <span class="cake-card__price">Starting ₹699</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="1">
-      <div class="cake-card__image"><span class="img-placeholder">cake2.jpg</span><span class="cake-card__emoji">💍</span></div>
-      <div class="cake-card__body">
-        <h3>Anniversary Cakes</h3>
-        <p>Romantic flavours crafted for milestone moments.</p>
-        <span class="cake-card__price">Starting ₹899</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="2">
-      <div class="cake-card__image"><span class="img-placeholder">cake3.jpg</span><span class="cake-card__emoji">👰</span></div>
-      <div class="cake-card__body">
-        <h3>Wedding Cakes</h3>
-        <p>Tiered elegance designed around your big day.</p>
-        <span class="cake-card__price">Starting ₹2999</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="3">
-      <div class="cake-card__image"><span class="img-placeholder">cake4.jpg</span><span class="cake-card__emoji">🖼️</span></div>
-      <div class="cake-card__body">
-        <h3>Photo Cakes</h3>
-        <p>Edible-print cakes that turn memories into dessert.</p>
-        <span class="cake-card__price">Starting ₹799</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="0">
-      <div class="cake-card__image"><span class="img-placeholder">cake1.jpg</span><span class="cake-card__emoji">🍫</span></div>
-      <div class="cake-card__body">
-        <h3>Chocolate Cakes</h3>
-        <p>Rich, decadent layers for true chocolate lovers.</p>
-        <span class="cake-card__price">Starting ₹749</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="1">
-      <div class="cake-card__image"><span class="img-placeholder">cake2.jpg</span><span class="cake-card__emoji">🍓</span></div>
-      <div class="cake-card__body">
-        <h3>Fruit Cakes</h3>
-        <p>Light sponge layered with fresh seasonal fruit.</p>
-        <span class="cake-card__price">Starting ₹799</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="2">
-      <div class="cake-card__image"><span class="img-placeholder">cake3.jpg</span><span class="cake-card__emoji">✨</span></div>
-      <div class="cake-card__body">
-        <h3>Designer Cakes</h3>
-        <p>Sculpted, hand-painted showpieces for big statements.</p>
-        <span class="cake-card__price">Starting ₹1499</span>
-      </div>
-    </article>
-
-    <article class="cake-card reveal" data-reveal="up" data-delay="3">
-      <div class="cake-card__image"><span class="img-placeholder">cake4.jpg</span><span class="cake-card__emoji">🧁</span></div>
-      <div class="cake-card__body">
-        <h3>Cupcakes</h3>
-        <p>Bite-sized indulgence boxed for sharing or gifting.</p>
-        <span class="cake-card__price">Starting ₹349 / box</span>
-      </div>
-    </article>
-
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="white.png" alt="Birthday Cake">
   </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>Birthday Cakes</h3>
+    <span class="cake-card__price">Starting ₹699</span>
+  </div>
+</article>
+
+    
+
+
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="mango.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>mangoo cake</h3>
+    <span class="cake-card__price">₹399</span>
+  </div>
+</article>
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="cakechoco.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>choco cake</h3>
+    <span class="cake-card__price"> ₹450</span>
+  </div>
+</article>
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="brownie.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>Brownie cake</h3>
+    <span class="cake-card__price">₹550</span>
+  </div>
+</article>
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="birthdaycake.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>dry nut cake</h3>
+    <span class="cake-card__price">₹450</span>
+  </div>
+</article>
+    <article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="softybrown.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>cupcakes</h3>
+    <span class="cake-card__price">₹50</span>
+  </div>
+</article>
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="bread.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>dry bread</h3>
+    <span class="cake-card__price">₹450</span>
+  </div>
+</article>
+<article class="cake-card">
+  <!-- Cake ki Photo -->
+  <div class="cake-card__image">
+    <img src="bun.png" alt="Birthday Cake">
+  </div>
+  
+  <!-- Cake ka Naam aur Price -->
+  <div class="cake-card__body">
+    <h3>bun</h3>
+    <span class="cake-card__price">₹450</span>
+  </div>
+</article>
+</div>
 </section>
 
 <!-- ===================== FEATURED GALLERY ===================== -->
@@ -304,32 +330,32 @@ function closeModal() {
 
   <div class="gallery__grid">
     <div class="gallery__item reveal" data-reveal="zoom" data-delay="0">
-      <img src="cake1.jpg" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="circle.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">cake1.jpg</span></div>
       <div class="gallery__overlay"><span>Rosette Birthday Cake</span></div>
     </div>
     <div class="gallery__item gallery__item--tall reveal" data-reveal="zoom" data-delay="1">
-      <img src="cake2.jpg" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="banana.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">cake2.jpg</span></div>
       <div class="gallery__overlay"><span>Three-Tier Wedding Cake</span></div>
     </div>
     <div class="gallery__item reveal" data-reveal="zoom" data-delay="2">
-      <img src="cake3.jpg" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="cookies.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">cake3.jpg</span></div>
       <div class="gallery__overlay"><span>Drip Chocolate Cake</span></div>
     </div>
     <div class="gallery__item reveal" data-reveal="zoom" data-delay="3">
-      <img src="cake4.jpg" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="softyblack.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">cake4.jpg</span></div>
       <div class="gallery__overlay"><span>Pastel Cupcake Box</span></div>
     </div>
     <div class="gallery__item gallery__item--tall reveal" data-reveal="zoom" data-delay="0">
-      <img src="hero-cake.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="red.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">hero-cake.png</span></div>
       <div class="gallery__overlay"><span>Gold Leaf Designer Cake</span></div>
     </div>
     <div class="gallery__item reveal" data-reveal="zoom" data-delay="1">
-      <img src="cake1.jpg" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="softybrown.png" alt="Featured cake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <div class="gallery__fallback"><span class="img-placeholder">cake1.jpg</span></div>
       <div class="gallery__overlay"><span>Photo Print Cake</span></div>
     </div>
