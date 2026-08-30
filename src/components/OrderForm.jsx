@@ -68,7 +68,11 @@ export default function OrderForm() {
     'Buns',  
     'Donuts',
     'Cookies',
-    'Orchard Parfait'
+    'Orchard Parfait',
+    'Choco Bliss Cake',
+    'Lotus Biscoff Cake',
+    'Blush Strawberry Cake',
+    'Golden Truffle Cake'
   ];
 
   const weights = [

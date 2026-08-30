@@ -8,6 +8,10 @@ export default function Categories() {
     { title: 'Cupcakes',        image: '/softybrown.png' },
     { title: 'Dry bread',       image: '/bread.png' },
     { title: 'Bun',             image: '/bun.png' },
+    { title: 'Choco Bliss Cake',image:      '/vanillacoco.png' },
+    { title: 'Lotus Biscoff Cake',image:    '/biscuitcake.jpeg' },
+    { title: 'Blush Strawberry Cake',image: '/strawberrycake.png' },
+    { title: 'Golden Truffle Cake',image:   '/chocolatecake.jpeg' },
   ];
 
   return (
