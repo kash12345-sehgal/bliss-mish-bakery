@@ -1,14 +1,7 @@
-export default function Gallery() {
-  const galleryItems = [
-    { src: '/circle.png',     alt: 'Donuts', isTall: false, delay: '0', fallbackText: 'cake1.jpg' },
-    { src: '/banana.png',     alt: 'Orchard Parfait', isTall: true, delay: '1', fallbackText: 'cake2.jpg' },
-    { src: '/cookies.png',    alt: 'Cookies', isTall: false, delay: '2', fallbackText: 'cake3.jpg' },
-    { src: '/softyblack.png', alt: 'Mini Chocolate Cupcakes', isTall: false, delay: '3', fallbackText: 'cake4.jpg' },
-    { src: '/red.png',        alt: 'Red Velvet Cupcake', isTall: true, delay: '0', fallbackText: 'hero-cake.png' },
-    { src: '/softybrown.png', alt: 'Pecan Muffin', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
-    { src: '/WhiteBread.png', alt: 'White Bread', isTall: false, delay: '1', fallbackText: 'cake1.jpg' },
+import { useBakeryData } from '../context/DataContext';
 
-  ];
+export default function Gallery() {
+  const { featured } = useBakeryData();
 
   const handleImageError = (e) => {
     e.currentTarget.style.display = 'none';
@@ -26,12 +19,12 @@ export default function Gallery() {
       </div>
 
       <div className="gallery__grid">
-        {galleryItems.map((item, index) => (
+        {featured.map((item, index) => (
           <div
-            key={index}
+            key={item.id || index}
             className={`gallery__item ${item.isTall ? 'gallery__item--tall' : ''} reveal`}
             data-reveal="zoom"
-            data-delay={item.delay}
+            data-delay={item.delay || (index % 4).toString()}
           >
             <img
               src={item.src}
@@ -39,7 +32,7 @@ export default function Gallery() {
               onError={handleImageError}
             />
             <div className="gallery__fallback">
-              <span className="img-placeholder">{item.fallbackText}</span>
+              <span className="img-placeholder">{item.fallbackText || item.alt}</span>
             </div>
             <div className="gallery__overlay">
               <span>{item.alt}</span>
@@ -50,3 +43,4 @@ export default function Gallery() {
     </section>
   );
 }
+

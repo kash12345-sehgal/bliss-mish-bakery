@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useBakeryData } from '../context/DataContext';
 
 export default function OrderForm() {
   const WHATSAPP_NUMBER = '919729729901';
+  const { products, featured } = useBakeryData();
 
   const [formData, setFormData] = useState({
     custName: '',
@@ -57,23 +59,14 @@ export default function OrderForm() {
     window.open(url, '_blank');
   };
 
-  const categories = [
-    'Birthday Cakes',
-    'Mangoo cake',
-    'Choco cake',
-    'Brownie cake',
-    'Dry nut cake',
-    'Cupcakes',  
-    'White bread',
-    'Buns',  
-    'Donuts',
-    'Cookies',
-    'Orchard Parfait',
-    'Choco Bliss Cake',
-    'Lotus Biscoff Cake',
-    'Blush Strawberry Cake',
-    'Golden Truffle Cake'
-  ];
+  // Derive unique categories from active products + featured items
+  const dynamicCategories = Array.from(
+    new Set([
+      ...products.map((p) => p.title),
+      ...featured.map((f) => f.alt),
+    ])
+  );
+
 
   const weights = [
     '1 Kg',
@@ -136,7 +129,7 @@ export default function OrderForm() {
                 onChange={handleChange}
               >
                 <option value="" disabled></option>
-                {categories.map((cat) => (
+                {dynamicCategories.map((cat) => (
                   <option key={cat} value={cat}>{cat}</option>
                 ))}
               </select>

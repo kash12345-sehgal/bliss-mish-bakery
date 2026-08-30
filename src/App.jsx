@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { DataProvider } from './context/DataContext';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,12 +13,49 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CustomCursor from './components/CustomCursor';
+import AdminPortal from './components/AdminPortal';
 
-export default function App() {
+function isUpDataRoute() {
+  if (typeof window === 'undefined') return false;
+  const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+  const hash = window.location.hash.toLowerCase().replace(/\/+$/, '');
+  return path === '/up-data' || hash === '#/up-data' || hash === '#up-data';
+}
+
+function BakeryApp() {
   const [loaderFinished, setLoaderFinished] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState(() => (isUpDataRoute() ? '/up-data' : '/'));
 
   useEffect(() => {
-    if (!loaderFinished) return;
+    const handleLocationChange = () => {
+      if (isUpDataRoute()) {
+        setCurrentRoute('/up-data');
+      } else {
+        setCurrentRoute('/');
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
+
+  const navigate = (path) => {
+    window.history.pushState({}, '', path);
+    if (path.includes('up-data')) {
+      setCurrentRoute('/up-data');
+    } else {
+      setCurrentRoute('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    if (!loaderFinished || currentRoute === '/up-data') return;
 
     // Run intersection observer for smooth scroll reveals once loader finishes
     const timer = setTimeout(() => {
@@ -37,8 +75,19 @@ export default function App() {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [loaderFinished]);
+  }, [loaderFinished, currentRoute]);
 
+  // If secret /up-data route is visited
+  if (currentRoute === '/up-data') {
+    return (
+      <>
+        <CustomCursor />
+        <AdminPortal onNavigateHome={() => navigate('/')} />
+      </>
+    );
+  }
+
+  // Standard Bakery Website
   return (
     <>
       <CustomCursor />
@@ -57,5 +106,13 @@ export default function App() {
       <Footer />
       <BackToTop />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <DataProvider>
+      <BakeryApp />
+    </DataProvider>
   );
 }
